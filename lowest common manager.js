@@ -3,7 +3,7 @@ function getLowestCommonManager(topManager, reportOne, reportTwo) {
 }
 
 function helper(topManager, reportOne, reportTwo) {
-    let foundReports = topManager == reportOne || topManager == reportTwo ? 1 : 0;
+    let foundReports = +(topManager == reportOne || topManager == reportTwo);
     
     for(const reporter of topManager.directReports) {
         const res = helper(reporter, reportOne, reportTwo);
